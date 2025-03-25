@@ -5,7 +5,7 @@ const scrapeAmazonProduct = require("./scraper");
 const app = express();
 app.use(cors());
 
-app.get("/scrape", async (req, res) => {
+app.post("/scrape", async (req, res) => {
   const { url } = req.query;
   if (!url) return res.status(400).json({ error: "URL is required" });
 
